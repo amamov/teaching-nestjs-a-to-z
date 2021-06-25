@@ -1,0 +1,19 @@
+//* https://www.staging-typescript.org/tsconfig
+
+{
+  "compilerOptions": {
+    "strict": true,
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES5",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "incremental": true
+  },
+  "exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
+}
