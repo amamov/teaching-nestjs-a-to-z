@@ -8,6 +8,10 @@
     {
       "directory": "04 NestJS 개요 및 객체지향 디자인 패턴/05, 06",
       "changeProcessCWD": true
+    },
+    {
+      "directory": "04 NestJS 개요 및 객체지향 디자인 패턴/07",
+      "changeProcessCWD": true
     }
   ]
 }
