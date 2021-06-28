@@ -22,7 +22,15 @@
       "changeProcessCWD": true
     },
     {
-      "directory": "05 NestJS 실전 프로젝트/04, 05, 06",
+      "directory": "05 NestJS 실전 프로젝트/04",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "05 NestJS 실전 프로젝트/05",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "05 NestJS 실전 프로젝트/06",
       "changeProcessCWD": true
     },
     {
