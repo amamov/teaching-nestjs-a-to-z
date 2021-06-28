@@ -1,5 +1,5 @@
 import { Body, UseFilters, UseInterceptors } from '@nestjs/common';
-import { Controller, Get, Post, Put } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 import { HttpExceptionFilter } from 'src/common/exceptions/http-exception.filter';
 import { SuccessInterceptor } from 'src/common/interceptors/success.interceptor';
 import { CatsService } from './cats.service';
