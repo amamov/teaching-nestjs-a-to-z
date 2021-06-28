@@ -12,6 +12,26 @@
     {
       "directory": "04 NestJS 개요 및 객체지향 디자인 패턴/07",
       "changeProcessCWD": true
+    },
+    {
+      "directory": "04 NestJS 개요 및 객체지향 디자인 패턴/07",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "05 NestJS 실전 프로젝트/02, 03",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "05 NestJS 실전 프로젝트/04, 05, 06",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "05 NestJS 실전 프로젝트/07, 08",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "05 NestJS 실전 프로젝트/09, 10",
+      "changeProcessCWD": true
     }
   ]
 }
