@@ -3,9 +3,10 @@ import { createContext, ReactNode, useContext, useState } from "react";
 // * 1. Create context type
 
 type MeType = {
-  _id: string;
+  id: string;
   email: string;
-  username: string;
+  name: string;
+  imgUrl?: string;
 };
 
 type ContextType = {
@@ -18,7 +19,7 @@ type ContextType = {
 
 const contextDefaultValues: ContextType = {
   me: null,
-  login: () => {},
+  login: (me: MeType) => {},
   logout: () => {},
 };
 
