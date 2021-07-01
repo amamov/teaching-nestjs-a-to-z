@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { Form, Input, Button } from "antd";
 import useInput from "hooks/useInput";
 import { useAuth } from "utils/store";
+import axios from "axios";
+import api from "utils/api";
 
 const FormWrapper = styled(Form)`
   padding: 1rem;
@@ -27,30 +29,45 @@ const LoginForm = () => {
   const { me, login, logout } = useAuth();
 
   const handleSubmit = useCallback(async () => {
-    console.log(email, password);
-    // axios.post('login')
-    login({ id: "asldjlkjas", email: email, name: "uieuiwqh" });
-  }, [email, password]);
+    //* 로그인
+    try {
+      const response = await axios.post(
+        `${api.cats}/login`,
+        { email, password },
+        { withCredentials: true }
+      );
+      console.log(response.data);
+      const getReponse = await axios.get(`${api.cats}`, {
+        withCredentials: true,
+        headers: {
+          Authorization: "Bearer " + response.data.data.token,
+        },
+      });
 
-  useEffect(() => {}, []);
+      login({ ...getReponse.data.data, token: response.data.data.token });
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response);
+        alert(error.response.data.message);
+      } else {
+        alert(error.message);
+      }
+    }
+  }, [email, password]);
 
   return (
     <FormWrapper onFinish={handleSubmit}>
       <div>
-        <label htmlFor="user_email">Cat Email</label>
+        <label htmlFor="email">Cat Email</label>
         <br />
-        <Input
-          name="user_email"
-          value={email}
-          onChange={handleEmail}
-          required
-        />
+        <Input name="email" value={email} onChange={handleEmail} required />
       </div>
       <div>
-        <label htmlFor="user_password">Cat Password</label>
+        <label htmlFor="password">Cat Password</label>
         <br />
         <Input
-          name="user_password"
+          name="password"
+          type="password"
           value={password}
           onChange={handlePassword}
           required

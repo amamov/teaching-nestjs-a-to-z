@@ -15,54 +15,31 @@ const ZButton = styled(Button)`
   font-weight: 500;
 `;
 
-const XImageBox = styled.div`
-  margin-top: 10px;
-`;
-
 const Signup = () => {
   const [email, handleEmail] = useInput<string>("");
   const [name, handleName] = useInput<string>("");
   const [password, handlePassword] = useInput<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const imageInput = useRef<HTMLInputElement>();
 
   const handleSubmit = useCallback(async () => {
+    //* 회원가입
     const data = { email, name, password };
     console.log(data);
     try {
-      const response = await axios.post(api.cats, data, { withCredentials: true });
-      console.log(response);
-      // login(cat)
-    } catch (error) {
-      console.log(error.response);
-      alert(error.response);
-    }
-    // Router.replace("/");
-  }, [email, password]);
-
-  const handleImgChange = useCallback(async (event) => {
-    const files = event.target.files;
-    const form = new FormData();
-    Array.from(files).forEach((file: Blob) => {
-      form.append("image", file);
-    });
-    console.log(form.getAll("image"));
-    try {
-      //TODO
-      const catImg = await axios.post(`${api.cats}/upload`, form, {
+      const response = await axios.post(api.cats, data, {
         withCredentials: true,
       });
-      console.log(catImg);
+      console.log(response.data);
+      Router.replace("/");
     } catch (error) {
-      console.log(error.response);
+      if (error.response) {
+        console.log(error.response);
+        alert(error.response.data.message);
+      } else {
+        alert(error.message);
+      }
     }
-  }, []);
-
-  const handleImgUpload = useCallback(() => {
-    if (imageInput.current !== undefined) {
-      imageInput.current.click();
-    }
-  }, [imageInput.current]);
+  }, [email, password]);
 
   return (
     <>
@@ -98,17 +75,6 @@ const Signup = () => {
               onChange={handlePassword}
             />
           </div>
-          <XImageBox>
-            <input
-              type="file"
-              name="image"
-              multiple
-              hidden
-              ref={imageInput}
-              onChange={handleImgChange}
-            />
-            <Button onClick={handleImgUpload}>Image Upload</Button>
-          </XImageBox>
 
           <div style={{ marginTop: 10 }}>
             <ZButton type="primary" htmlType="submit" loading={isLoading}>

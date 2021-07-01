@@ -1,10 +1,12 @@
-import { ReactNode, useCallback, useEffect, useState } from "react";
+import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Router from "next/router";
 import { Layout, Button, Card, Image as AntdImage } from "antd";
 import styled from "styled-components";
 import { useAuth } from "utils/store";
 import AccountForm from "./AccountForm";
+import axios from "axios";
+import api from "utils/api";
 
 const { Header, Content, Footer, Sider } = Layout;
 const { Meta } = Card;
@@ -36,6 +38,12 @@ const ZCard = styled(Card)`
   width: inherit;
 `;
 
+const XLoading = styled.div`
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+`;
+
 const ZFooter = styled(Footer)`
   text-align: center;
   @media only screen and (max-width: 768px) {
@@ -62,6 +70,10 @@ const ZButton = styled(Button)`
   bottom: 30px;
 `;
 
+const XImageBox = styled.div`
+  margin-top: 10px;
+`;
+
 type Props = {
   children: ReactNode;
   isSignup?: boolean;
@@ -71,6 +83,9 @@ const AppLayout = ({ children, isSignup = false }: Props): JSX.Element => {
   const [collapsed, setCollapsed] = useState<boolean>(true);
   const [broken, setBroken] = useState<boolean>(false);
   const { me, login, logout } = useAuth(); //TODO
+  const [isUpdated, setIsUpdated] = useState<boolean>(true);
+  const [trigger, setTrigger] = useState<boolean>(false);
+  const imageInput = useRef<HTMLInputElement>();
 
   const handleLogOutClink = useCallback(async () => {
     logout();
@@ -81,6 +96,10 @@ const AppLayout = ({ children, isSignup = false }: Props): JSX.Element => {
       Router.replace("/");
     }
   }, []);
+
+  useEffect(() => {
+    setIsUpdated(true);
+  }, [trigger]);
 
   const handleCollapse = useCallback(
     (collapsed: boolean, type: any) => {
@@ -96,6 +115,44 @@ const AppLayout = ({ children, isSignup = false }: Props): JSX.Element => {
     [broken]
   );
 
+  const handleImgChange = useCallback(
+    async (event) => {
+      //* 이미지 추가
+      const files = event.target.files;
+      const form = new FormData();
+      Array.from(files).forEach((file: Blob) => {
+        form.append("image", file);
+      });
+      console.log(form.getAll("image"));
+      try {
+        setIsUpdated(false);
+        const newCatResponse = await axios.post(`${api.cats}/upload`, form, {
+          withCredentials: true,
+          headers: {
+            Authorization: "Bearer " + me.token,
+          },
+        });
+        console.log(newCatResponse);
+        login({ ...newCatResponse.data.data, token: me.token });
+        setTrigger((preState) => !preState);
+      } catch (error) {
+        if (error.response) {
+          console.log(error.response);
+          alert(error.response.data.message);
+        } else {
+          alert(error.message);
+        }
+      }
+    },
+    [me, isUpdated, trigger]
+  );
+
+  const handleImgUpload = useCallback(() => {
+    if (imageInput.current !== undefined) {
+      imageInput.current.click();
+    }
+  }, [imageInput.current]);
+
   return (
     <>
       <ZLayout>
@@ -106,20 +163,21 @@ const AppLayout = ({ children, isSignup = false }: Props): JSX.Element => {
             onBreakpoint={handleBroken}
             onCollapse={handleCollapse}
           >
-            <ZCard
-              hoverable
-              cover={
-                <AntdImage
-                  alt="cat"
-                  src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" //TODO
-                />
-              }
-            >
-              <Meta
-                title="Europe Street beat" //TODO
-                description="www.instagram.com" //TODO
-              />
+            <ZCard hoverable cover={<AntdImage alt="cat" src={me.imgUrl} />}>
+              <Meta title={me.email} description={me.name} />
             </ZCard>
+            <XImageBox>
+              <input
+                type="file"
+                name="image"
+                multiple
+                hidden
+                ref={imageInput}
+                onChange={handleImgChange}
+              />
+              {!isUpdated && <XLoading>이미지 변경중...</XLoading>}
+              <Button onClick={handleImgUpload}>Image Update</Button>
+            </XImageBox>
             <ZButton type="primary" size={"large"} onClick={handleLogOutClink}>
               Logout
             </ZButton>

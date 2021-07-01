@@ -2,11 +2,12 @@ import { createContext, ReactNode, useContext, useState } from "react";
 
 // * 1. Create context type
 
-type MeType = {
+export type MeType = {
   id: string;
   email: string;
   name: string;
   imgUrl?: string;
+  token?: string;
 };
 
 type ContextType = {
