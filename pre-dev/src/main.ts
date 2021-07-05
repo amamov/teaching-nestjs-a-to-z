@@ -11,11 +11,6 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
   app.useGlobalFilters(new HttpExceptionFilter());
-
-  app.useStaticAssets(path.join(__dirname, './common', 'uploads'), {
-    prefix: '/media',
-  });
-
   app.use(
     ['/docs', '/docs-json'],
     expressBasicAuth({
@@ -26,9 +21,15 @@ async function bootstrap() {
     }),
   );
 
+  // http://localhost:8000/media/cats/aaa.png
+
+  app.useStaticAssets(path.join(__dirname, './common', 'uploads'), {
+    prefix: '/media',
+  });
+
   const config = new DocumentBuilder()
     .setTitle('C.I.C')
-    .setDescription('cat')
+    .setDescription('Cat Information Community!!!!!')
     .setVersion('1.0.0')
     .build();
   const document: OpenAPIObject = SwaggerModule.createDocument(app, config);

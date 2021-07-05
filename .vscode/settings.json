@@ -6,6 +6,10 @@
       "changeProcessCWD": true
     },
     {
+      "directory": "tsts",
+      "changeProcessCWD": true
+    },
+    {
       "directory": "04 NestJS 개요 및 객체지향 디자인 패턴/05, 06",
       "changeProcessCWD": true
     },
@@ -43,6 +47,10 @@
     },
     {
       "directory": "05 NestJS 실전 프로젝트/11",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "06 프로젝트 배포와 서버 운영",
       "changeProcessCWD": true
     },
     {

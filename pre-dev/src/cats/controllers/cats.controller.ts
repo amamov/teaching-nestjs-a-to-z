@@ -9,18 +9,18 @@ import {
 import { Controller, Get, Post } from '@nestjs/common';
 import { HttpExceptionFilter } from 'src/common/exceptions/http-exception.filter';
 import { SuccessInterceptor } from 'src/common/interceptors/success.interceptor';
-import { CatsService } from './cats.service';
-import { CatRequestDto } from './dto/cats.request.dto';
+import { CatsService } from '../services/cats.service';
+import { CatRequestDto } from '../dto/cats.request.dto';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { ReadOnlyCatDto } from './dto/cat.dto';
+import { ReadOnlyCatDto } from '../dto/cat.dto';
 import { AuthService } from 'src/auth/auth.service';
 import { LoginRequestDto } from 'src/auth/dto/login.request.dto';
 import { JwtAuthGuard } from 'src/auth/jwt/jwt.guard';
 import { Request } from 'express';
 import { CurrentUser } from 'src/common/decorators/user.decorator';
-import { FilesInterceptor } from '@nestjs/platform-express';
+import { FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
 import { multerOptions } from 'src/common/utils/multer.options';
-import { Cat } from './cats.schema';
+import { Cat } from '../cats.schema';
 
 @Controller('cats')
 @UseInterceptors(SuccessInterceptor)
@@ -34,7 +34,7 @@ export class CatsController {
   @ApiOperation({ summary: '현재 고양이 가져오기' })
   @UseGuards(JwtAuthGuard)
   @Get()
-  getCurrentCat(@CurrentUser() cat: Cat) {
+  getCurrentCat(@CurrentUser() cat) {
     return cat.readOnlyData;
   }
 
@@ -68,6 +68,7 @@ export class CatsController {
     @CurrentUser() cat: Cat,
   ) {
     console.log(files);
+
     // return 'uploadImg';
     // return { image: `http://localhost:8000/media/cats/${files[0].filename}` };
     return this.catsService.uploadImg(cat, files);
