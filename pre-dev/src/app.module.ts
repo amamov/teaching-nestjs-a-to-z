@@ -17,6 +17,7 @@ import { AuthModule } from './auth/auth.module';
       useCreateIndex: true,
       useFindAndModify: false,
     }),
+
     CatsModule,
     AuthModule,
   ],

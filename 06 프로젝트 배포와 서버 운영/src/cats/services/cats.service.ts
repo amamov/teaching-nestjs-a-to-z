@@ -16,8 +16,8 @@ export class CatsService {
     return readOnlyCats;
   }
 
-  async uploadImg(cat: Cat, files: Express.Multer.File[]) {
-    const fileName = `cats/${files[0].filename}`;
+  async uploadImg(cat: Cat, file: any) {
+    const fileName = file.key;
 
     console.log(fileName);
 
