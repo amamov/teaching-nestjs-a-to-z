@@ -1,5 +1,14 @@
 {
   "git.ignoreLimitWarning": true,
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.alwaysShowStatus": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
   "eslint.workingDirectories": [
     {
       "directory": "04 NestJS 개요 및 객체지향 디자인 패턴/01, 02, 03, 04",
