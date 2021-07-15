@@ -3,9 +3,8 @@
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><kbd> <img src="./images/insta.png" width="300" alt="Nest" /></kbd></a>
 </p>
-<p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
 
-## [강의 바로가기]()
+<p align="center"><a href="http://nodejs.org" target="_blank">강의 바로가기</a></p>
 
 <br />
 
@@ -30,7 +29,7 @@ NestJS는 이런 아키텍처의 구조와 디자인 패턴을 프레임워크�
 이런 다양한 이점 덕에 많은 개발자들이 NestJS에 주목하고 있습니다.
 
 <p align="center">
-<img src="https://cdn.inflearn.com/public/files/courses/327273/f9e566d2-8a5d-4695-b048-f5530d76a918/_2021-07-02__2.59.32.png" alt="nest" width="350"  />
+<img src="https://cdn.inflearn.com/public/files/courses/327273/f9e566d2-8a5d-4695-b048-f5530d76a918/_2021-07-02__2.59.32.png" alt="nest" width="500"  />
 </p>
 
 <br />
@@ -56,5 +55,5 @@ NestJS는 이런 아키텍처의 구조와 디자인 패턴을 프레임워크�
 NestJS 구조뿐만 아니라 각종 서비스에 공통적으로 존재하는 핵심 기능을 기반으로 한 “고양이 정보 커뮤니티” 실전 프로젝트 API를 클론 코딩합니다. 직접 프로젝트를 개발해 보면서 NestJS를 실제 실무에 적용할 수 있도록 도와드립니다.
 
 <p align="center">
-<img src="https://cdn.inflearn.com/public/files/courses/327273/110af07c-b793-4ba0-8eb1-09ce366f84ed/%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A1%E1%86%AB2.gif" alt="nest" width="350"  />
+<img src="./images/ss.gif" alt="nest" width="400"  />
 </p>
