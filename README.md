@@ -1,15 +1,30 @@
 # NestJS A to Z
 
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
+  <a href="http://nestjs.com/" target="blank"><kbd> <img src="./images/insta.png" width="300" alt="Nest" /></kbd></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+<p align="center">[인프런] NestJS 기초부터 심화까지</p>
 
 <br />
 <br />
 
-## [인프런 출시] NestJS 기초부터 심화까지
+## What is NestJS?
+
+NestJS는 TypeScript(타입스크립트)를 지원하는 효율적이고 확장 가능한 Node.js의 서버 애플리케이션 프레임워크입니다. Express 또는 Fastify와 같은 강력한 서버 프레임워크 위에 고도화된 아키텍쳐를 제공합니다. 이를 통해 애플리케이션을 마이크로서비스(Microservice)로 쉽게 분할할 수 있으며, 확장성이 높고 유지 보수가 쉬운 서버 애플리케이션을 쉽게 개발할 수 있습니다.
+
+## Why is NestJS?
+
+NestJS와 기존의 Node.js 프레임워크인 Express(익스프레스)의 큰 차이는 아키텍처 구조를 프레임워크에서 제공한다는 점입니다.
+
+순수 Express를 사용하는 프로젝트에 협업을 하는 과정을 생각해 봅시다. 개발자마다 Express를 사용하는 아키텍쳐 패턴은 정말 다양합니다. 프로젝트의 규모가 커지면 커질수록 개발자 또는 팀마다 프로젝트 구조와 스타일이 다르면 협업 과정에 드는 소통 비용이 증가합니다. 이는 생산성 저하와 유지보수의 어려움으로 이어집니다
+
+NestJS는 이런 아키텍처의 구조와 디자인 패턴을 프레임워크에서 제공합니다. 때문에 각 개발자들의 아키텍처를 통일하고 소통 비용을 절감할 수 있으며, 확장성 있고 효율적인 개발을 할 수 있습니다.
+
+순수 Express를 사용하는 프로젝트에 협업을 하는 과정을 생각해 봅시다. 개발자마다 Express를 사용하는 아키텍쳐 패턴은 정말 다양합니다. 프로젝트의 규모가 커지면 커질수록 개발자 또는 팀마다 프로젝트 구조와 스타일이 다르면 협업 과정에 드는 소통 비용이 증가합니다. 이는 생산성 저하와 유지보수의 어려움으로 이어집니다
+
+NestJS는 이런 아키텍처의 구조와 디자인 패턴을 프레임워크에서 제공합니다. 때문에 각 개발자들의 아키텍처를 통일하고 소통 비용을 절감할 수 있으며, 확장성 있고 효율적인 개발을 할 수 있습니다.
+
+또한 기존에 Express에서 사용한 라이브러리들을 그대로 NestJS 아키텍처 위에서 사용할 수 있습니다. 뿐만 아니라, 성능 향상을 위해 Fastify를 부분별로 사용할 수도 있을 만큼의 호환성도 제공합니다.
+
+이런 다양한 이점 덕에 많은 개발자들이 NestJS에 주목하고 있습니다.
