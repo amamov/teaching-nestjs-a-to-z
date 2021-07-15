@@ -21,7 +21,7 @@ NestJS와 기존의 Node.js 프레임워크인 Express(익스프레스)의 큰 �
 NestJS는 이런 아키텍처의 구조와 디자인 패턴을 프레임워크에서 제공합니다. 때문에 각 개발자들의 아키텍처를 통일하고 소통 비용을 절감할 수 있으며, 확장성 있고 효율적인 개발을 할 수 있습니다.
 
 <p align="center">
-<img src="https://cdn.inflearn.com/public/files/courses/326931/506d952a-98ec-48eb-9d11-b1287db5c892/327273-8.png" alt="nest" width="350"  />
+<img src="https://cdn.inflearn.com/public/files/courses/326931/506d952a-98ec-48eb-9d11-b1287db5c892/327273-8.png" alt="nest" width="500"  />
 </p>
 
 또한 기존에 Express에서 사용한 라이브러리들을 그대로 NestJS 아키텍처 위에서 사용할 수 있습니다. 뿐만 아니라, 성능 향상을 위해 Fastify를 부분별로 사용할 수도 있을 만큼의 호환성도 제공합니다.
