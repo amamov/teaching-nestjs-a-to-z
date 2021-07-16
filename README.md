@@ -1,10 +1,10 @@
 # [인프런] 탄탄한 백엔드 NestJS! 기초부터 심화까지
 
 <p align="center">
-  <a href="https://www.inflearn.com/course/temp_327273?inst=798f440e" target="blank"><kbd> <img src="./images/insta.png" width="300" alt="Nest" /></kbd></a>
+  <a href="https://www.inflearn.com/course/탄탄한-백엔드-네스트?inst=798f440e" target="blank"><kbd> <img src="./images/insta.png" width="300" alt="Nest" /></kbd></a>
 </p>
 
-<p align="center"><a href="https://www.inflearn.com/course/temp_327273?inst=798f440e" target="_blank">강의 바로가기</a></p>
+<p align="center"><a href="https://www.inflearn.com/course/탄탄한-백엔드-네스트?inst=798f440e" target="_blank">강의 바로가기</a></p>
 
 <br />
 
