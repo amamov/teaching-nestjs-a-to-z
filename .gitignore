@@ -1,6 +1,7 @@
 .env
 .DS_Store
 dist
+.vscode
 
 # Logs
 logs

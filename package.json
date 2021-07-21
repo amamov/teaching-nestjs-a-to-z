@@ -1,0 +1,9 @@
+{
+  "name": "teaching-nestjs-a-to-z",
+  "scripts": {
+    "start": "pm2 start app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
