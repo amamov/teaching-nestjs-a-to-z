@@ -1,7 +1,6 @@
 .env
 .DS_Store
 dist
-pre-backend
 
 
 # Logs
