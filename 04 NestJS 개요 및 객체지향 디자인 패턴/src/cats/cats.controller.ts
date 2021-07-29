@@ -1,6 +1,5 @@
 import {
   Delete,
-  HttpException,
   Param,
   ParseIntPipe,
   Patch,
@@ -10,6 +9,7 @@ import {
 import { Controller, Get, Post, Put } from '@nestjs/common';
 import { HttpExceptionFilter } from 'src/common/exceptions/http-exception.filter';
 import { SuccessInterceptor } from 'src/common/interceptors/success.interceptor';
+import { PositiveIntPipe } from 'src/common/pipes/positiveInt.pipe';
 import { CatsService } from './cats.service';
 
 @Controller('cats')
@@ -27,9 +27,9 @@ export class CatsController {
 
   // cats/:id
   @Get(':id')
-  getOneCat(@Param('id', ParseIntPipe) param: number) {
+  getOneCat(@Param('id', ParseIntPipe, PositiveIntPipe) param: number) {
     console.log(param);
-    console.log(typeof param);
+    // console.log(typeof param);
     return 'get one cat api';
   }
 

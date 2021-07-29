@@ -11,7 +11,11 @@
   },
   "eslint.workingDirectories": [
     {
-      "directory": "04 NestJS 개요 및 객체지향 디자인 패턴/01, 02, 03, 04",
+      "directory": "chat",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "04 NestJS 개요 및 객체지향 디자인 패턴",
       "changeProcessCWD": true
     },
     {
@@ -60,6 +64,30 @@
     },
     {
       "directory": "06 프로젝트 배포와 서버 운영",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "07 실시간 랜덤 채팅 웹 앱 개발/02",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "07 실시간 랜덤 채팅 웹 앱 개발/03",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "07 실시간 랜덤 채팅 웹 앱 개발/04",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "07 실시간 랜덤 채팅 웹 앱 개발/05",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "07 실시간 랜덤 채팅 웹 앱 개발/06",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "07 실시간 랜덤 채팅 웹 앱 개발/07",
       "changeProcessCWD": true
     },
     {
