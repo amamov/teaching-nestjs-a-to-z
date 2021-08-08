@@ -11,6 +11,10 @@
   },
   "eslint.workingDirectories": [
     {
+      "directory": "typeorm-project",
+      "changeProcessCWD": true
+    },
+    {
       "directory": "chattings",
       "changeProcessCWD": true
     },
