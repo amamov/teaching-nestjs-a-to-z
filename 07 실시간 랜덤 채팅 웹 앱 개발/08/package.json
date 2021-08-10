@@ -28,8 +28,6 @@
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/platform-socket.io": "^8.0.5",
     "@nestjs/websockets": "^8.0.5",
-    "class-transformer": "^0.4.0",
-    "class-validator": "^0.13.1",
     "hbs": "^4.1.2",
     "mongoose": "^5.13.5",
     "reflect-metadata": "^0.1.13",
