@@ -1,3 +1,4 @@
+import { Cat } from './cats.schema';
 import {
   Body,
   Req,
@@ -30,7 +31,7 @@ export class CatsController {
   @ApiOperation({ summary: '현재 고양이 가져오기' })
   @UseGuards(JwtAuthGuard)
   @Get()
-  getCurrentCat(@CurrentUser() cat) {
+  getCurrentCat(@CurrentUser() cat: Cat) {
     return cat.readOnlyData;
   }
 

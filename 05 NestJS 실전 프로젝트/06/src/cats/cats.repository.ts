@@ -12,9 +12,12 @@ export class CatsRepository {
   async existsByEmail(email: string): Promise<boolean> {
     const result = await this.catModel.exists({ email });
     return result;
+
   }
 
   async create(cat: CatRequestDto): Promise<Cat> {
     return await this.catModel.create(cat);
   }
+  
+  
 }
