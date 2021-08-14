@@ -16,8 +16,8 @@ import { ReadOnlyCatDto } from './dto/cat.dto';
 import { AuthService } from 'src/auth/auth.service';
 import { LoginRequestDto } from 'src/auth/dto/login.request.dto';
 import { JwtAuthGuard } from 'src/auth/jwt/jwt.guard';
-import { Request } from 'express';
 import { CurrentUser } from 'src/common/decorators/user.decorator';
+import { CatCurrentDto } from './dto/cats.current.dto';
 
 @Controller('cats')
 @UseInterceptors(SuccessInterceptor)
@@ -31,7 +31,8 @@ export class CatsController {
   @ApiOperation({ summary: '현재 고양이 가져오기' })
   @UseGuards(JwtAuthGuard)
   @Get()
-  getCurrentCat(@CurrentUser() cat: Cat) {
+  getCurrentCat(@CurrentUser() cat: CatCurrentDto) {
+    console.log(cat);
     return cat.readOnlyData;
   }
 
