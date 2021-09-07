@@ -194,7 +194,7 @@ const AppLayout = ({ children, isSignup = false }: Props): JSX.Element => {
                   : "flex",
             }}
           >
-            <Image width={43} height={"auto"} src="/nestjs.svg" />
+            <img width={43} height={"auto"} src="/nestjs.svg" />
             <span style={{ marginLeft: 10 }}>Cat Information Community</span>
           </ZHeader>
 
