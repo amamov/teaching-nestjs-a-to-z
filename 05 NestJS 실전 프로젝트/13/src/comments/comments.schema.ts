@@ -5,6 +5,7 @@ import { ApiProperty } from '@nestjs/swagger';
 
 const options: SchemaOptions = {
   timestamps: true,
+  collection: 'comments',
 };
 
 @Schema(options)

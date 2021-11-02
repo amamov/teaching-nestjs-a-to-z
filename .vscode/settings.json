@@ -99,6 +99,10 @@
     {
       "directory": "pre-dev",
       "changeProcessCWD": true
+    },
+    {
+      "directory": "nestjs-aws-s3",
+      "changeProcessCWD": true
     }
   ]
 }

@@ -15,8 +15,8 @@ import { CommentsModule } from './comments/comments.module';
     MongooseModule.forRoot(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
+      // useCreateIndex: true,
+      // useFindAndModify: false,
     }),
     CommentsModule,
     CatsModule,
